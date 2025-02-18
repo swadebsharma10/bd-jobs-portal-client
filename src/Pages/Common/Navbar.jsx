@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext/AuthContext";
+import logo from '../../assets/logoSmall.png';
 
 const Navbar = () => {
 
@@ -10,9 +11,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/"
-          style={(isActive) => ({
-            color: isActive ? "text-primary" : "",
-          })}
+          activeClassName="selected"
         >
           Home
         </NavLink>
@@ -20,6 +19,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/about"
+          activeClassName="selected"
         >
          About
         </NavLink>
@@ -66,7 +66,10 @@ const Navbar = () => {
             {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">
+          <img className="w-12" src={logo} alt="Logo" />
+          <h3 className="text-3xl text-primary font-bold">Job PortalBd</h3>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
